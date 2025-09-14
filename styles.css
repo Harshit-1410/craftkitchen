@@ -1,0 +1,326 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #181818;
+  color: #fff;
+}
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.9) 100%);
+  z-index: 2;
+}
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+}
+.hero-logo {
+  width: 320px;
+  max-width: 90vw;
+  margin-bottom: 2.5rem;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+.subheadline {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #e0c68b;
+}
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.btn {
+  background: #e0c68b;
+  color: #181818;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.btn:hover {
+  background: #fff;
+  color: #e0c68b;
+}
+.btn-secondary {
+  background: #181818;
+  color: #e0c68b;
+  border: 2px solid #e0c68b;
+}
+.btn-secondary:hover {
+  background: #e0c68b;
+  color: #181818;
+}
+
+/* About Section */
+.about {
+  padding: 4rem 2rem;
+  background: #222;
+}
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.about-text {
+  flex: 1 1 350px;
+}
+.about-image img {
+  width: 220px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+/* Portfolio Section */
+.portfolio {
+  padding: 4rem 2rem;
+  background: #181818;
+}
+.portfolio h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+}
+
+.portfolio .btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+.portfolio-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s;
+}
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(24,24,24,0.85);
+  color: #e0c68b;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-align: center;
+}
+.portfolio-item:hover img {
+  transform: scale(1.08);
+}
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+  padding: 4rem 2rem;
+  background: #222;
+}
+.why-choose-us h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.features-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  text-align: center;
+  color: #e0c68b;
+}
+.feature i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 4rem 2rem;
+  background: #181818;
+}
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.testimonial-carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+  height: 320px;
+  display: flex;
+  align-items: center;
+}
+.testimonial-carousel.multi {
+  max-width: 1200px;
+}
+
+.testimonial-carousel.multi .testimonial {
+min-width: calc(33.3333% - 1rem); /* ensures 3 fit properly */
+  margin: 0 0.5rem; 
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.testimonial-list {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+  will-change: transform;
+}
+.testimonial {
+  min-width: 100%;
+  box-sizing: border-box;
+  margin-right: 0;
+}
+.testimonial {
+  background: #222;
+  color: #e0c68b;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 16px;
+  max-width: 320px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+.testimonial-stars {
+  color: #ffd700;
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+}
+.testimonial blockquote {
+  font-style: italic;
+  margin: 0 0 0.7rem 0;
+  color: #fff;
+}
+.testimonial-client {
+  font-size: 0.95rem;
+  color: #e0c68b;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.testimonials .btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* CTA Banner */
+.cta-banner {
+  background: linear-gradient(90deg, #e0c68b 0%, #c59d5f 100%);
+  color: #181818;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #e0c68b;
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  font-size: 1rem;
+}
+.footer-links a {
+  color: #e0c68b;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+.footer-contact {
+  margin: 1rem 0;
+}
+.footer-social a {
+  color: #e0c68b;
+  margin: 0 0.5rem;
+  font-size: 1.7rem;
+  transition: color 0.3s, transform 0.3s;
+  display: inline-block;
+}
+.footer-social a:hover {
+  color: #fff;
+  transform: scale(1.2) rotate(-8deg);
+}
+
+.footer-copyright {
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  color: #bfa76a;
+}
+
+@media (max-width: 900px) {
+  .about-content, .features-row, .testimonial-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-image img {
+    width: 140px;
+  }
+}
