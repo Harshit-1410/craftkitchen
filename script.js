@@ -29,35 +29,22 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Multi-item testimonial carousel (3 visible)
+  // Multi-item testimonial carousel (3 visible desktop, 2 static mobile)
   const carousel = document.querySelector('.testimonial-carousel.multi');
   if (carousel) {
     const list = carousel.querySelector('.testimonial-list');
     const items = list.querySelectorAll('.testimonial');
-    let current = 0;
-    const total = items.length;
-    // Clone first 3 items to end for infinite effect
-    for (let i = 0; i < 3; i++) {
-      list.appendChild(items[i].cloneNode(true));
+    function isMobile() {
+      return window.innerWidth <= 600;
     }
-    function goToSlide(idx) {
-      list.style.transform = `translateX(-${idx * (100/3)}%)`;
+    if (!isMobile()) {
+      // On desktop/laptop, show 3 testimonials statically, no animation
+      list.style.transform = 'none';
+      list.style.transition = 'none';
+    } else {
+      // On mobile, show all testimonials statically, no animation
+      list.style.transform = 'none';
+      list.style.transition = 'none';
     }
-    function nextSlide() {
-      current++;
-      if (current > total) {
-        list.style.transition = 'none';
-        list.style.transform = 'translateX(0)';
-        current = 1;
-        setTimeout(() => {
-          list.style.transition = 'transform 0.7s cubic-bezier(.77,0,.18,1)';
-          goToSlide(current);
-        }, 50);
-      } else {
-        goToSlide(current);
-      }
-    }
-    setInterval(nextSlide, 3500);
-    goToSlide(0);
   }
 });
